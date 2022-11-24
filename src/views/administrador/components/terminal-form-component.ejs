@@ -1,0 +1,29 @@
+<div id="containerForm" class="card mx-basic my-basic hide">
+    <form id="formTerminal" action="/admin/terminal" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="nombreTerminal" name="nombre" type="text" class="validate">
+                <label for="nombreTerminal">Nombre</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="ciudadTerminal" name="ciudad" type="text" class="validate">
+                <label for="ciudadTerminal">Ciudad</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="estadoTerminal" name="estado" type="text" class="validate">
+                <label for="estadoTerminal">Estado</label>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col s1 offset-s10">
+            <button type="submit" id="btnGuardar"
+                class="waves-effect waves-light btn my-basic mx-basic blue">Registrar</button>
+        </div>
+        <div class="col s1">
+            <button id="btnCancelar" class="waves-effect waves-light btn my-basic mx-basic red">Cancelar</button>
+        </div>
+    </div>
+</div>

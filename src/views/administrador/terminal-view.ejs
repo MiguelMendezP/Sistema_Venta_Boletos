@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../comunes/components/headers-component") -%>
+</head>
+
+<body>
+
+    <%- include("../comunes/components/sidenav-component") -%>
+        <main>
+            <h4 class="my-basic">Terminales</h4>
+            
+                <%- include("../administrador/components/terminal-form-component") -%>
+                <%- include("../administrador/components/terminal-table-component") -%>
+          
+
+            <!--img width="100" height="100" src="/api/v1/file?filePath= " alt="" srcset=""-->
+
+        </main>
+
+    <%- include("../comunes/components/footer-component") -%>
+    <script src="/assets/js/terminal/form-terminal.js"></script>
+    <script src="/assets/js/terminal/terminal.js"></script>
+</body>
+
+</html>

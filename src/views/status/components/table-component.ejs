@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <th>
+            <tr>
+                <td>#</td>
+                <td>Status</td>
+                <td>description</td>
+                <td>Acciones</td>
+            </tr>
+        </th>
+    </thead>
+    <tbody>
+        <% for(var i=0; i<records.length ;i++){ %> 
+            <tr>
+                <td><%=records[i]["idStatus"]  %></td>
+                <td><%=records[i]["status"]  %></td>
+                <td><%=records[i]["description"]  %></td>
+                <td>
+                    <a class="waves-effect waves-light btn" href="/api/v1/example/view/form-edit/<%=records[i]["idStatus"]  %> ">Editar</a>
+                    <a class="waves-effect waves-light btn" href="/api/v1/example/delete/<%=records[i]["idStatus"]  %>">Eliminar</a>
+                </td>
+            </tr>
+        <% } %> 
+    </tbody>
+</table>
