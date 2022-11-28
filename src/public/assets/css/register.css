@@ -28,7 +28,7 @@ html {
     position: relative;
     background: #FFFFFF;
     width: 600px;
-    border-radius: 10px;
+    border-radius: 4px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     margin: 100px auto 10px;
@@ -136,22 +136,7 @@ html {
     width: auto;
     margin: 0 10px 0 0;
   }
-  .form-group .form-register {
-    margin-top: 10px;
-    color: #4285F4;
-    background-color: #FFFFFF;
-    font-size: 12px;
-    text-decoration: none;
-  }
-  
-  .form-group .form-inivtado{
-    margin-bottom: 10px;
-    color: #000000;
-    background-color: #ffffff;
-    font-size: 16px;
-    text-decoration: none;
-  }
-  
+
   .form-panel {
     padding: 60px calc(5% + 60px) 60px 60px;
     box-sizing: border-box;

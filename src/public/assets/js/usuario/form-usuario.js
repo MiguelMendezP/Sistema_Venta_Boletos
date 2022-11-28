@@ -1,19 +1,17 @@
-const formTerminal = (() => {
+const formUsuario = (() => {
   const $containerForm = document.getElementById("containerForm");
-  const $form = document.getElementById("formTerminal");
-  const BASE_URL = "/admin/terminal";
+  const $form = document.getElementById("formUsuario");
+  const BASE_URL = "/admin/usuario";
   //
 
   const _setData = (item = {}, typeRender = "POST") => {
-    const $inputNombreTerminal = document.getElementById("nombreTerminal");
-    const $inputCiudadTerminal = document.getElementById("ciudadTerminal");
-    const $inputEstadoTerminal = document.getElementById("estadoTerminal");
-    const { idTerminal, nombre, ciudad, estado} = item;
-    $inputNombreTerminal.value = nombre;
-    $inputCiudadTerminal.value = ciudad;
-    $inputEstadoTerminal.value = estado;
+    const $inputCorreoUsuario = document.getElementById("correoUsuario");
+    const $inputContraseniaUsuario = document.getElementById("contraseniaUsuario");
+    const { correo, contrasenia,} = item;
+    $inputCorreoUsuario.value = correo;
+    $inputContraseniaUsuario.value = contrasenia;
     $form.setAttribute("method", typeRender);
-    $form.setAttribute("item-id", idTerminal);
+    $form.setAttribute("item-id", correo);
     M.updateTextFields();
     
   };
@@ -21,8 +19,8 @@ const formTerminal = (() => {
   const _configureBtnCancelar = () => {
     const $btnCancelar = document.getElementById("btnCancelar");
     $btnCancelar.addEventListener("click", () => {
-      formTerminal.setVisible(false);
-      terminal.setVisible(true);
+      formUsuario.setVisible(false);
+      usuario.setVisible(true);
     });
   };
 
@@ -44,17 +42,17 @@ const formTerminal = (() => {
 
   const _create = async (formData) => {
     await http.post({url:BASE_URL,body: formData});
-    formTerminal.setVisible(false);
-    terminal.setVisible(true);
-    terminal.getData();
+    formUsuario.setVisible(false);
+    usuario.setVisible(true);
+    usuario.getData();
   };
 
   const _update = async (formData) => {
     const itemId = $form.getAttribute("item-id");
     await http.post({url:`${BASE_URL}/update/${itemId}`,body: formData});
-    formTerminal.setVisible(false);
-    terminal.setVisible(true);
-    terminal.getData();
+    formUsuario.setVisible(false);
+    usuario.setVisible(true);
+    usuario.getData();
   };
 
   const _setVisibleForm = (visible = true) => {
@@ -77,4 +75,4 @@ const formTerminal = (() => {
   };
 })();
 
-formTerminal.init();
+formUsuario.init();

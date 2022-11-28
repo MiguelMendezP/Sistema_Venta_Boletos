@@ -14,7 +14,7 @@ const http = (() => {
 
   const _put = async (data = { url: "", body: {} }) => {
     const { url, body } = data;
-    const response = await fetch(url, {
+    const response = await fetch(url, { 
       method: "PUT",
       body,
     });

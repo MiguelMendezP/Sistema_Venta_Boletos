@@ -5,32 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/loggin.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/loggin.css">
 </head>
 
 <body>
-    <%- include("banner") -%> 
-    <div class="row">
-        <div class="col s6">
-            <input type="text">
-            <input type="text">
-            <button class="btn-primary">loggear</button>
+    
+    <div class="form">
+        <div class="form-panel one">
+        <div class="form-header">
+            <h1>Login</h1>
+        </div>
+            <div class="form-content">
+                <form>
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input id="correo" type="text" name="correo" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="contrasenia">Contraseña</label>
+                        <input id="contrasenia" type="password" name="contrasenia" required="required"/>
+                    </div>
+                </form>
+
+                <div class="form-group">
+                    <button type="submit" id="btnIngresar">Ingresar</button>
+                </div>
+
+            </div> 
+            <form action = "/register" method = "post">
+                <div class="form-group">
+                    <label class="form-remember">
+                    <button type="submit" class="form-register" >Registrarse</button>
+                </div>
+            </form>
         </div>
 
-        <h1>
-            <%=valorDeEjemplo %>
-        </h1>
-        <%if(numeroEjemplo>100){ %>
-            <h1>
-                Simon
-            </h1>
-            <% }else{ %>
-                <h5>Nel</h5>
-
-                <% } %>
+        <div>
+            <form action = "/busqueda" method = "post">
+                <div class="form-group">
+                    <button type="submit" class="form-inivtado"> Iniciar Como Invitado </button>
+                </div>
+            </form>
+        </div>
 
     </div>
+
+    <script src="/assets/js/login/login.js"></script>
+    <script src="/assets/js/http.js"></script>
 
 </body>
 

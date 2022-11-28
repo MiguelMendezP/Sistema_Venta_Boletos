@@ -1,14 +1,23 @@
-import { DataTypes } from "sequelize";
+import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
+import UsuarioType from "../types/usuario.types";
 
-export const Usuario = sequelize.define('usuario', {
-    usuario:{
-        type: DataTypes.STRING
+export class UsuarioModel extends Model<UsuarioType> {}
+
+UsuarioModel.init(
+    {
+        correo: {
+            type: DataTypes.STRING,
+            primaryKey: true,
+            allowNull: false
+        },
+        contrasenia: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     },
-    correo: {
-        type: DataTypes.STRING
-    },
-    contrasenia: {
-        type: DataTypes.STRING
+    {
+        sequelize,
+        tableName: "usuario",
     }
-})
+);

@@ -5,7 +5,7 @@ import {
     getTerminales,
     updateTerminal,
     deleteTerminal 
-} from "../controllers/crearTerminal.controller";
+} from "../controllers/terminal.controller";
 import storageMulter from "../middlewares/multer.middleware";
 
 

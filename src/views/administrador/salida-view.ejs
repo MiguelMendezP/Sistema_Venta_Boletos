@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../comunes/administrador/headers-component") -%>
+    
+</head>
+
+<body>
+
+    <%- include("../comunes/administrador/sidenav-component") -%>
+        <main>
+            <h4 class="my-basic">Salidas</h4>
+            
+                <%- include("../administrador/components/salida-form-component") -%>
+                <%- include("../administrador/components/salida-table-component") -%>
+          
+            <!--img width="100" height="100" src= "/api/v1/file?filePath= " alt="" srcset=""-->
+
+        </main>
+
+    <%- include("../comunes/administrador/footer-component") -%>
+    <script src="/assets/js/salida/form-salida.js"></script>
+    <script src="/assets/js/salida/salida.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<div id="containerForm" class="card mx-basic my-basic hide">
+    <form id="formSalida" action="/admin/salida" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s4">
+                <label>Hora</label>
+            </div>
+            <div class="input-field col s4">
+                <label>Fecha</label>
+            </div>
+        </div>
+        <div class="row">            
+            <div class="input-field col s4">
+                <input id="hora" type="time" name="hora"></input>
+            </div>
+            <div class="input-field col s4">
+                <input id="fecha" type="date" name="fecha"></input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <label>Ciudad Origen</label>
+            </div>
+            <div class="input-field col s4">
+                <label>Ciudad Destino</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <select id="ciudadOrigen" class="browser-default" name="terminal_salida"></select>
+            </div>
+            <div class="input-field col s4">
+                <select id="ciudadDestino" class="browser-default" name="terminal_destino"></select>
+            </div>
+        </div>
+
+    </form>
+    <div class="row">
+        <div class="col s1 offset-s10">
+            <button type="submit" id="btnGuardar"
+                class="waves-effect waves-light btn my-basic mx-basic blue">Registrar</button>
+        </div>
+        <div class="col s1">
+            <button id="btnCancelar" class="waves-effect waves-light btn my-basic mx-basic red">Cancelar</button>
+        </div>
+    </div>
+</div>
