@@ -33,15 +33,7 @@ const salida = (() => {
     for (const key in item) {
       const value = item[key];
       const $td = document.createElement("td");
-      if (key !== "url_imagen") {
-        $td.innerText = value;
-      } else {
-        const $img = document.createElement("img");
-        $img.setAttribute("src", `/api/v1/file?filePath=${value}`);
-        $img.classList.add("img-icon");
-        $td.appendChild($img);
-      }
-
+      $td.innerText = value;
       $row.appendChild($td);
 
     }

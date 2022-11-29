@@ -20,6 +20,10 @@ SalidaModel.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        precio: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         terminal_salida: {
             type: DataTypes.STRING,
             allowNull: false,

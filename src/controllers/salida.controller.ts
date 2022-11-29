@@ -8,7 +8,7 @@ export async function indexViewSalida(req: Request, res: Response) {
 export async function getSalida(req: Request, res: Response) {
     const { query: where } = req
     const salidas = await SalidaModel.findAll({
-        attributes: ["idSalida", "hora", "fecha", "terminal_salida","terminal_destino"],
+        attributes: ["idSalida", "hora", "fecha", "precio", "terminal_salida","terminal_destino"],
         raw: true,
         where
     });

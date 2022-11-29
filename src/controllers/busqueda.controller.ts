@@ -4,10 +4,14 @@ class BuscarController{
 
     public buscar(req:Request,res:Response):void{
         res.render("busqueda/busqueda-view",{
-            title: 'Buscar'
         });
     }
-    //no jala revisar
+
+    public salidas(req: Request, res:Response){
+        res.render("busqueda/viajes-view", {
+        });
+    }
+   
     public buscando(req: Request, res:Response){
         res.redirect('/busqueda')
     }

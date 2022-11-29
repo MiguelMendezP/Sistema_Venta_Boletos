@@ -8,11 +8,13 @@ const formSalida = (() => {
   const _setData = (item = {}, typeRender = "POST") => {
     const $hora = document.getElementById("hora");
     const $fecha = document.getElementById("fecha");
+    const $precio = document.getElementById("precio");
     const $ciudadOrigen = document.getElementById("ciudadOrigen");
     const $ciudadDestino = document.getElementById("ciudadDestino");
-    const { idSalida, hora, fecha, terminal_salida,terminal_destino } = item;
+    const { idSalida, hora, fecha, precio, terminal_salida,terminal_destino } = item;
     $hora.value = hora;
     $fecha.value = fecha;
+    $precio.value = precio;
     $ciudadOrigen.options[$ciudadOrigen.selectedIndex].text = terminal_salida;
     $ciudadDestino.options[$ciudadDestino.selectedIndex].text = terminal_destino;
     $form.setAttribute("method", typeRender);
@@ -24,7 +26,6 @@ const formSalida = (() => {
   const _llenarComboBox  = async () => {
     const response = await http.get(BASE_URL_TERMINAL);
     let mapTerminales = response.map((response) => response.nombre);
-    let mapIDTerminales = response.map((response) => response.idTerminal);
     var $ciudadOrigen = document.getElementById("ciudadOrigen");
     var $ciudadDestino = document.getElementById("ciudadDestino");
 

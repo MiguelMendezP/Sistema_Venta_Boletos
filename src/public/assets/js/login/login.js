@@ -4,6 +4,7 @@ const $btnIngresar = document.getElementById("btnIngresar");
 //location.href="/busqueda"
 //location.href="/admin"
 
+
 $btnIngresar.addEventListener("click", () => {
     usuarios();
 });

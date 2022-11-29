@@ -6,5 +6,7 @@ const buscar: Router = Router();
 //Ruta
 buscar.get("/",buscarController.buscar);
 buscar.post("/",buscarController.buscando);
+buscar.get("/viajes",buscarController.salidas);
+
 
 export default buscar;

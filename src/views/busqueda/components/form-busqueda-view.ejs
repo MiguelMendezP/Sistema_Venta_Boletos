@@ -1,0 +1,34 @@
+<form id="formBusqueda" action="/busqueda/viajes/" method="GET">
+    <div class="row">
+        <div class="input-field col s4">
+            <i class="material-icons prefix">directions_bus</i>
+            <label>Ciudad Origen</label>
+        </div>
+        <div class="input-field col s4">
+            <i class="material-icons prefix">directions_bus</i>
+            <label>Ciudad Destino</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <select id="ciudadOrigen" class="browser-default" name="terminal_salida"></select>
+        </div>
+        <div class="input-field col s4">
+            <select id="ciudadDestino" class="browser-default" name="terminal_destino"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <i class="material-icons prefix">date_range</i>
+            <label>Fecha</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s4">
+            <input id="fecha" type="date" name="fecha"></input>
+        </div>
+        <div class="col s1">
+            <button id="btnBuscar" class="waves-effect waves-light btn-large my-basic mx-basic green">Buscar</button>
+        </div>
+    </div>
+</form>

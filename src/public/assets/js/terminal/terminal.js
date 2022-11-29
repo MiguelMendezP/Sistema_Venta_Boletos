@@ -34,15 +34,7 @@ const terminal = (() => {
     for (const key in item) {
       const value = item[key];
       const $td = document.createElement("td");
-      if (key !== "url_imagen") {
-        $td.innerText = value;
-      } else {
-        const $img = document.createElement("img");
-        $img.setAttribute("src", `/api/v1/file?filePath=${value}`);
-        $img.classList.add("img-icon");
-        $td.appendChild($img);
-      }
-
+      $td.innerText = value;
       $row.appendChild($td);
 
     }
@@ -68,13 +60,6 @@ const terminal = (() => {
     }
   };
 
-
-
-  const _initElements = () => {
-    _getData();
-    _configureBtnNuevo();
-  };
-
   const _configureBtnNuevo = () => {
     const $btnNuevo = document.getElementById("btnNuevo");
     $btnNuevo.addEventListener("click", () => {
@@ -82,6 +67,11 @@ const terminal = (() => {
       formTerminal.setVisible(true);
       terminal.setData({}, 'POST')
     });
+  };
+
+  const _initElements = () => {
+    _getData();
+    _configureBtnNuevo();
   };
 
   return {
