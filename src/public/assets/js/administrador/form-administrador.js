@@ -1,17 +1,17 @@
 const formUsuario = (() => {
   const $containerForm = document.getElementById("containerForm");
   const $form = document.getElementById("formUsuario");
-  const BASE_URL = "/admin/usuario";
+  const BASE_URL = "/admin/administrador";
   //
 
   const _setData = (item = {}, typeRender = "POST") => {
     const $inputCorreoUsuario = document.getElementById("correoUsuario");
     const $inputContraseniaUsuario = document.getElementById("contraseniaUsuario");
-    const { idUsuario, correo, contrasenia,} = item;
+    const { idAdministrador, correo, contrasenia, administrador} = item;
     $inputCorreoUsuario.value = correo;
     $inputContraseniaUsuario.value = contrasenia;
     $form.setAttribute("method", typeRender);
-    $form.setAttribute("item-id", idUsuario);
+    $form.setAttribute("item-id", idAdministrador);
     M.updateTextFields();
     
   };
@@ -30,6 +30,7 @@ const formUsuario = (() => {
     
       const method = $form.getAttribute("method");
       const formData = new FormData($form);
+      formData.append("administrador",true);
       if (method.toUpperCase() === "POST") {
         _create(formData);
       }

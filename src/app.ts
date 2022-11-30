@@ -10,6 +10,7 @@ import BusquedaController from "./routes/busqueda.router";
 import indexRouter from "./routes/index.route";
 import terminaloRouter from "./routes/terminal.route";
 import usuarioRouter from "./routes/usuario.route";
+import administradorRouter from "./routes/administrador.router";
 import salidaRouter from "./routes/salidas.route";
 
 // Initializations
@@ -33,6 +34,7 @@ app.use("/busqueda", BusquedaController);
 app.use("/admin", indexRouter);
 app.use("/admin/terminal",terminaloRouter);
 app.use("/admin/usuario",usuarioRouter)
+app.use("/admin/administrador",administradorRouter)
 app.use("/admin/salida",salidaRouter);
 
 export default app;

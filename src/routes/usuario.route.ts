@@ -14,8 +14,8 @@ const usuarioRouter: Router = Router();
 usuarioRouter.get("/view", indexViewUsuario);
 usuarioRouter.get("/", getUsuario);
 usuarioRouter.post("/",storageMulter.single("imagen"), createUsuario);
-usuarioRouter.post("/update/:correo",storageMulter.single("imagen"), updateUsuario);
-usuarioRouter.delete("/:correo",deleteUsuario);
+usuarioRouter.post("/update/:idUsuario",storageMulter.single("imagen"), updateUsuario);
+usuarioRouter.delete("/:idUsuario",deleteUsuario);
 
 
 

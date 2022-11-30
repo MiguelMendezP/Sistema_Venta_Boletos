@@ -8,7 +8,7 @@ export async function indexViewUsuario(req: Request, res: Response) {
 export async function getUsuario(req: Request, res: Response) {
     const { query: where } = req
     const usuarios = await UsuarioModel.findAll({
-        attributes: ["correo", "contrasenia"],
+        attributes: ["idUsuario","correo", "contrasenia"],
         raw: true,
         where
     });
@@ -27,16 +27,16 @@ export async function createUsuario(req: Request, res: Response) {
 }
 
 export async function updateUsuario(req: Request, res: Response) {
-    const { correo } = req.params;
+    const { idUsuario } = req.params;
     const { body } = req;
-    const entity = await UsuarioModel.findByPk(correo)
+    const entity = await UsuarioModel.findByPk(idUsuario)
     await entity?.update(body);
     res.status(201).json(entity?.toJSON());
 }
 
 export async function deleteUsuario(req: Request, res: Response) {
-    const { correo } = req.params;
-    const entity = await UsuarioModel.findByPk(correo);
+    const { idUsuario } = req.params;
+    const entity = await UsuarioModel.findByPk(idUsuario);
     await entity?.destroy();
     res.status(204).json({ok:""});
 }

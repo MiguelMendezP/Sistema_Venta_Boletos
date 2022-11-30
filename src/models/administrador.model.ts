@@ -1,12 +1,12 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
-import UsuarioType from "../types/usuario.types";
+import AdministradorType from "../types/administrador.types";
 
-export class UsuarioModel extends Model<UsuarioType> {}
+export class AdministradorModel extends Model<AdministradorType> {}
 
-UsuarioModel.init(
+AdministradorModel.init(
     {
-        idUsuario: {
+        idAdministrador:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
@@ -20,9 +20,13 @@ UsuarioModel.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        administrador:{
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+        }
     },
     {
         sequelize,
-        tableName: "usuario",
+        tableName: "administrador",
     }
 );

@@ -1,0 +1,25 @@
+<div id="containerForm" class="card mx-basic my-basic hide">
+    <form id="formUsuario" action="/admin/administrador" method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="correoUsuario" name="correo" type="text" class="validate">
+                <label for="correoUsuario">Correo</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s4">
+                <input id="contraseniaUsuario" name="contrasenia" type="text" class="validate">
+                <label for="contraseniaUsuario">Contraseña</label>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col s1 offset-s10">
+            <button type="submit" id="btnGuardar"
+                class="waves-effect waves-light btn my-basic mx-basic blue">Registrar</button>
+        </div>
+        <div class="col s1">
+            <button id="btnCancelar" class="waves-effect waves-light btn my-basic mx-basic red">Cancelar</button>
+        </div>
+    </div>
+</div>

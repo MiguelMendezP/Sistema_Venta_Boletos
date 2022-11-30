@@ -18,5 +18,4 @@ class LoginController{
         res.send("Recivido")
     }
 }
-
 export const loginController = new LoginController();

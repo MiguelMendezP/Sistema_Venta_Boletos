@@ -1,22 +1,21 @@
 const usuario = (() => {
   const $bodyTable = document.getElementById("data");
-  const BASE_URL = "/admin/usuario";
+  const BASE_URL = "/admin/administrador";
   const $containerTable = document.getElementById("containerTable");
 
   const _getData = async () => {
     const response = await http.get(BASE_URL);
     $bodyTable.innerHTML = "";
-    //Error aqui
     for (let i = 0; i < response.length; i++) {
-      const $row = _createRow(response[i], "idUsuario");
+      const $row = _createRow(response[i], "idAdministrador");
       $bodyTable.appendChild($row);
     }
   };
 
   const _actionButtonEditar = async (event) => {
     const $btn = event.target;
-    const idUsuario = $btn.getAttribute("item-id");
-    const response = await http.get(`${BASE_URL}?idUsuario=${idUsuario}`);
+    const idAdministrador = $btn.getAttribute("item-id");
+    const response = await http.get(`${BASE_URL}?idAdministrador=${idAdministrador}`);
     formUsuario.setData(response[0], 'PUT');
     formUsuario.setVisible(true);
     usuario.setVisible(false);
@@ -24,8 +23,8 @@ const usuario = (() => {
 
   const _actionButtonEliminar = async (event) => {
     const $btn = event.target;
-    const idUsuario = $btn.getAttribute("item-id");
-    const response = await http.delete({ url: `${BASE_URL}/${idUsuario}` });
+    const idAdministrador = $btn.getAttribute("item-id");
+    const response = await http.delete({ url: `${BASE_URL}/${idAdministrador}` });
     usuario.getData();
   };
 
