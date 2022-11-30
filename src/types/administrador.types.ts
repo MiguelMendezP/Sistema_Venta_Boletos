@@ -1,5 +1,6 @@
 export default interface AdministradorType {
-    idAdministrador?: number,
+    idAdministrador?: number;
+    nombre?: string;
     correo?: string;
     contrasenia?: string;
     administrador?: boolean;

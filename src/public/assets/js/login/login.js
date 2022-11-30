@@ -45,5 +45,4 @@ async function usuarios() {
             console.log("contraseña mal usuario");
         }
     }
-
 }

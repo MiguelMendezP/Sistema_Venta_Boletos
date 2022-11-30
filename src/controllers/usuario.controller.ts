@@ -8,7 +8,7 @@ export async function indexViewUsuario(req: Request, res: Response) {
 export async function getUsuario(req: Request, res: Response) {
     const { query: where } = req
     const usuarios = await UsuarioModel.findAll({
-        attributes: ["idUsuario","correo", "contrasenia"],
+        attributes: ["idUsuario","nombre","correo", "contrasenia"],
         raw: true,
         where
     });

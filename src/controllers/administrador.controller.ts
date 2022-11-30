@@ -8,7 +8,7 @@ export async function indexViewAdministrador(req: Request, res: Response) {
 export async function getAdministrador(req: Request, res: Response) {
     const { query: where } = req
     const admin = await AdministradorModel.findAll({
-        attributes: ["idAdministrador","correo", "contrasenia","administrador"],
+        attributes: ["idAdministrador","nombre","correo", "contrasenia","administrador"],
         raw: true,
         where
     });

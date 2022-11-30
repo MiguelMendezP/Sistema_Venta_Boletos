@@ -12,6 +12,10 @@ AdministradorModel.init(
             allowNull: false,
             autoIncrement: true
         },
+        nombre: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         correo: {
             type: DataTypes.STRING,
             allowNull: false

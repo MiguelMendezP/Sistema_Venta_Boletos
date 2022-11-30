@@ -5,9 +5,11 @@ const formUsuario = (() => {
   //
 
   const _setData = (item = {}, typeRender = "POST") => {
+    const $inputNombreUsuario = document.getElementById("nombreUsuario")
     const $inputCorreoUsuario = document.getElementById("correoUsuario");
     const $inputContraseniaUsuario = document.getElementById("contraseniaUsuario");
-    const { idAdministrador, correo, contrasenia, administrador} = item;
+    const { idAdministrador, nombre, correo, contrasenia, administrador} = item;
+    $inputNombreUsuario.value = nombre;
     $inputCorreoUsuario.value = correo;
     $inputContraseniaUsuario.value = contrasenia;
     $form.setAttribute("method", typeRender);
