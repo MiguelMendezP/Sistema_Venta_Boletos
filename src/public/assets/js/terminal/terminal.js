@@ -6,8 +6,9 @@ const terminal = (() => {
   const _getData = async () => {
     const response = await http.get(BASE_URL);
     $bodyTable.innerHTML = "";
-    //Error aqui
+    
     for (let i = 0; i < response.length; i++) {
+      console.log(response[i]);
       const $row = _createRow(response[i], "idTerminal");
       $bodyTable.appendChild($row);
     }
@@ -38,6 +39,7 @@ const terminal = (() => {
       $row.appendChild($td);
 
     }
+    console.log(item[itemId]);
     $row.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
     $row.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
     return $row;
