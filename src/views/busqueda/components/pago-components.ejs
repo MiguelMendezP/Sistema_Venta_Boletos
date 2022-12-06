@@ -1,3 +1,181 @@
 <div id="containerPago" class="card mx-basic my-basic hide">
-    <h1>Hola</h1>
+    <div class="dividirPantalla">
+        <div>
+            <h5>Datos de pasajeros</h5>
+            <form id="formDatosPasajero" action="" method="post">
+                <div id="formContainer01" class="containerPasajero">
+                    <div id="container-div01" class="container-div">
+
+                        <div id="container-valores01" class="container-valores">
+
+                            <p id="pasajero01">Pasajero 01</p>
+                            <p id="asiento01">Asiento: </p>
+                        </div>
+
+                        <div id="container-datos01" class="container-datos">
+                            <div id="container-nombre01" class="container-nombre">
+                                <p id="nombre01">Nombre(s)</p>
+                                <input id="inputNombre01" placeholder="Nombre del pasajero" type="text">
+                            </div>
+                            <div id="container-apellido01" class="container-apellido">
+                                <p id="apellido01">Apellido(s)</p>
+                                <input id="inputApellido01" placeholder="Apellidos del pasajero" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <p></p>
+                </div>
+            </form>
+
+
+            <h5>Datos de facturacion</h5>
+
+            <div class="containerDatosFactucaion">
+
+                <div class="c1">
+                    <p>Correo electronico*</p>
+                    <input id="inputCorreo" type="text">
+                    <p>Confirmar correo electronico*</p>
+                    <input id="inputConfirmCorreo" type="text">
+                </div>
+                <div class="c2">
+                    <p>Numero de telefono*</p>
+                    <input id="inputTelefono" type="text">
+                </div>
+
+            </div>
+        </div>
+        <div class="datosViaje-pago">
+            <div class="datosAsientos">
+                <div class="datosViaje">
+                    <h4>Datos del Viaje</h4>
+                    <p id="fecha_hora1">Hora:</p>
+                    <p id="origen1">Origen:</p>
+                    <p id="destino1">Destino:</p>
+                </div>
+
+                <div class="viajePrecio">
+                    <div class="alinearDatos">
+                        <p class="texto">Viaje</p>
+                        <p class="precio" id="viajeValor1"></p>
+                    </div>
+                    <div class="alinearDatos">
+                        <p class="texto">Subtotal</p>
+                        <p class="precio" id="subtotalValor1"></p>
+                    </div>
+                    <div class="alinearDatos">
+                        <p class="texto">IVA</p>
+                        <p class="precio" id="ivaValor1"></p>
+                    </div>
+                </div>
+
+                <div class="viajePrecioTotal">
+                    <div class="alinearDatos">
+                        <p class="texto">Total:</p>
+                        <p class="precio" id="precioFinal1"></p>
+                    </div>
+                    <div class="alinearDatos">
+                        <p class="textoDato" id="origen">Precios incluyen IVA</p>
+                    </div>
+                </div>
+                <div class="pago">
+                    <button id="btnFinalizarPago">Proceder a Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Tarjeta de pago-->
+    <h5>Tarjeta de pago</h5>
+
+    <div class="container">
+        <div class="card-container">
+
+            <div class="front">
+                <div class="image">
+                    <img src="/assets/img/chip.png" alt="">
+                    <img src="/assets/img/visa.png" alt="">
+                </div>
+                <div class="card-number-box">################</div>
+                <div class="flexbox">
+                    <div class="box">
+                        <span>Dueño</span>
+                        <div class="card-holder-name">Nombre Completo</div>
+                    </div>
+                    <div class="box">
+                        <span>Expiracion</span>
+                        <div class="expiration">
+                            <span class="exp-month">MM</span>
+                            <span class="exp-year">YY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="back">
+                <div class="stripe"></div>
+                <div class="box">
+                    <span>CVV</span>
+                    <div class="cvv-box"></div>
+                    <img src="/assets/img/visa.png" alt="">
+                </div>
+            </div>
+
+        </div>
+
+        <form action="">
+            <div class="inputBox">
+                <span>Numero de tarjeta</span>
+                <input type="text" maxlength="16" class="card-number-input">
+            </div>
+            <div class="inputBox">
+                <span>Dueño de tarjeta</span>
+                <input type="text" class="card-holder-input">
+            </div>
+            <div class="flexbox">
+                <div class="inputBox">
+                    <span>Expiracion MM</span>
+                    <select name="" id="" class="month-input">
+                        <option value="month" selected disabled>Mes</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>Expiracion YY</span>
+                    <select name="" id="" class="year-input">
+                        <option value="year" selected disabled>Año</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                    </select>
+                </div>
+                <div class="inputBox">
+                    <span>CVV</span>
+                    <input type="text" maxlength="4" class="cvv-input">
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
 </div>

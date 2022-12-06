@@ -90,6 +90,24 @@ const viajes = (() => {
             $iconValor.innerHTML = cantidadPasajeros;
         }
     });
+    datosDelViaje = [];
+    const _mandarArray = () => {
+        datosDelViaje.push($fecha_hora.innerHTML);
+        datosDelViaje.push($origen.innerHTML);
+        datosDelViaje.push($destino.innerHTML);
+        datosDelViaje.push($viajeValor.innerText);
+        datosDelViaje.push($subtotalValor.innerText);
+        datosDelViaje.push($ivaValor.innerText);
+        datosDelViaje.push($precioFinal.innerText);
+        
+        return datosDelViaje
+    }
+    dameIdSalida = 0;
+    const _dameIdSalida = () => {
+
+        return dameIdSalida
+    }
+
 
     const _actionButton = async (event) => {
         const $btn = event.target;
@@ -106,7 +124,7 @@ const viajes = (() => {
         var ivaValor = "$" + ((mapPrecio[0] * $iconValor.innerHTML) * .16).toFixed(2);
         var precioFinal = "$" + (mapPrecio[0] * $iconValor.innerHTML)+".00";
 
-        $fecha_hora.innerHTML = mapFecha[0] + ", " + mapHora;
+        $fecha_hora.innerHTML = "Salida el "+mapFecha[0] + ", " + mapHora;
         $origen.innerHTML = "Origen: " + mapTerminal_salida;
         $destino.innerHTML = "Destino: " + mapTerminal_destino;
         $viajeValor.innerText = viajeValor;
@@ -114,11 +132,13 @@ const viajes = (() => {
         $ivaValor.innerText = ivaValor;
         $precioFinal.innerText = precioFinal;
 
+
         viajes.setVisible(false);
         asientos.setVisible(true);
         $btnProcederPagarn.style.backgroundColor = '#808080';
+        dameIdSalida = idSalida;
     };
-
+    
     const _setVisible = (visible = true) => {
         if (visible) {
             $containerTable.classList.remove("hide");
@@ -137,6 +157,8 @@ const viajes = (() => {
             _initElements();
         },
         setVisible: _setVisible,
+        mandarArray: _mandarArray,
+        dameIdSalida:_dameIdSalida
     };
 })();
 

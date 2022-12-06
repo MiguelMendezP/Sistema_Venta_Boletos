@@ -10,6 +10,8 @@ const asientos = (() => {
         }
     });
 
+
+
     const validarSeleccionado = (e) => {
         switch (e.target.id) {
             case "seat--01":
@@ -116,6 +118,7 @@ const asientos = (() => {
             _initElements();
         },
         setVisible: _setVisible,
+        arrayAsientosSeleccionado: arrayAsientosSeleccionado,
     };
 })();
 

@@ -1,32 +1,30 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../database/database.config";
-import UsuarioType from "../types/usuario.types";
+import PasajeroType from "../types/pasajero.types";
 
-export class UsuarioModel extends Model<UsuarioType> {}
+export class PasajeroModel extends Model<PasajeroType> {}
 
-UsuarioModel.init(
+PasajeroModel.init(
     {
         idUsuario: {
             type: DataTypes.INTEGER,
-            primaryKey: true,
             allowNull: false,
-            autoIncrement: true
         },
         nombre: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        correo: {
+        apellido: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        contrasenia: {
+        telefono:{
             type: DataTypes.STRING,
-            allowNull: false,
-        },
+            allowNull: false
+        }
     },
     {
         sequelize,
-        tableName: "usuario",
+        tableName: "pasajero",
     }
 );

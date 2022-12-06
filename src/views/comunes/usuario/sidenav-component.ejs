@@ -1,19 +1,20 @@
 <ul id="slide-out" class="sidenav sidenav-fixed">
-    <li><a href="#!">User <i class="material-icons">person</i></a></li>
+    <li><i class="material-icons">person</i><a id="correoUsuario" href="#!"> <%=user.correo%> </a></li>
+    <a href="/">Cerrar Sesión</a>
+    <hr>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
+
             <li>
                 <a class="collapsible-header">Usuario<i class="material-icons">view_quilt</i></a>
                 <div class="collapsible-body">
                     <ul>
-                        <li><a href="/admin/salida/view"">Salidas</a></li>
-                        <li><a href="/admin/terminal/view">Terminales</a></li>
-                        <li><a href="/admin/usuario/view"">Usuarios</a></li>
+                        <li><a href="/mis-boletos/view">Mis Boletos</a></li>
                     </ul>
                 </div>
             </li>
+
         </ul>
     </li>
-   
+
 </ul>
-<!--a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a-->

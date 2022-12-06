@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, Helvetica, sans-serif
+}
+h5{
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+
+.container-div {
+    width: 700px;
+    height: 130px;
+    display: flex;
+    background: #f8f9fb;
+    border-radius: 7px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+
+    position: relative;
+    top: 20px;
+    left: 30px;
+
+}
+.container-datos .container-nombre input,
+.container-datos .container-apellido input {
+    font-size: 14px;
+    width: 250px;
+    border-top: #ffffff;
+    border-left: #f8f9fb;
+    border-right: #f8f9fb;
+    background-color: #f8f9fb;
+
+}
+
+.container-valores {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.container-datos {
+    display: flex;
+    border-width: 1px;
+    border-left-style: solid;
+    border-left-color: rgb(188, 188, 188);
+}
+
+.container-nombre,
+.container-apellido {
+    padding: 10px;
+}
+
+/*Datos de Factuacion*/
+
+.containerDatosFactucaion{
+    width: 700px;
+    height: 250px;
+    display: flex;
+    background: #f8f9fb;
+    border-radius: 7px;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+
+    position: relative;
+    top: 20px;
+    left: 30px;
+}
+
+.c1{
+    padding: 20px;
+    padding-bottom: -10px;
+}
+.c2{
+    padding-top: -10px;
+    padding: 20px;
+}
+
+.containerDatosFactucaion .c1 input,
+.containerDatosFactucaion .c2 input{
+
+        font-size: 14px;
+        width: 300px;
+        border-top: #ffffff;
+        border-left: #f8f9fb;
+        border-right: #f8f9fb;
+        background-color: #f8f9fb;
+    
+    
+}
+
+.dividirPantalla{
+    display: flex;
+}
+.datosViaje-pago{
+    position: relative;
+    top: 20px;
+    left: 60px;
+}
