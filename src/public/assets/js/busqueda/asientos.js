@@ -1,4 +1,5 @@
 const asientos = (() => {
+    const BASE_URL_BOLETO = "/mis-boletos";
     const $containerAsientos = document.getElementById("containerAsientos");
     const $labels = document.querySelectorAll("#formAsientos label");
 
@@ -59,15 +60,22 @@ const asientos = (() => {
         }
     }
 
+    
+    var arrayAsientosOcupa = [];
 
-    var arrayAsientosOcupa = ['img--07', 'img--08', 'img--09', 'img--11'];
+    async function _asientosOcupados() {
+        const responseBoleto = await http.get(BASE_URL_BOLETO);
+        idSalida = viajes.dameIdSalida();
+        for (let i = 0; i < responseBoleto.length; i++) {
+            if(responseBoleto[i].idSalida == idSalida){
 
-    const _asientosOcupados = () => {
-        for (let i = 0; i < arrayAsientosOcupa.length; i++) {
-            $img = document.getElementById(arrayAsientosOcupa[i]);
+                $img = document.getElementById("img--0"+responseBoleto[i].noAsiento);
             $img.setAttribute("src", "/assets/img/ocupado.png");
-        }
+            }
+        }  
+        console.log(arrayAsientosOcupa);
     }
+
 
     var arrayAsientosSeleccionado = [];
     const $iconValor = document.getElementById("iconValor");
@@ -102,15 +110,17 @@ const asientos = (() => {
 
     const _setVisible = (visible = true) => {
         if (visible) {
+            _asientosOcupados();
             $containerAsientos.classList.remove("hide");
+            
         } else {
+           
             $containerAsientos.classList.add("hide");
         }
     };
 
     const _initElements = () => {
         _setVisible(false);
-        _asientosOcupados();
     };
 
     return {

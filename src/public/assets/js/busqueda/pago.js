@@ -7,7 +7,7 @@ const pago = (() => {
     const $inputConfirmCorreo = document.getElementById("inputConfirmCorreo");
     const BASE_URL_PASAJERO = "/pasajero";
     const BASE_URL_USUARIO = "/admin/usuario";
-    const BASE_URL_BOLETO = "/boleto";
+    const BASE_URL_BOLETO = "/mis-boletos";
 
     const $btnFinalizarPago = document.getElementById("btnFinalizarPago");
     $btnFinalizarPago.addEventListener("click", () => {
@@ -26,8 +26,6 @@ const pago = (() => {
             formData.append("idUsuario", responseUsuario[posidUsuario].idUsuario);
             formData.append("idSalida", viajes.dameIdSalida());
             formData.append("noAsiento", arrayAsientosSeleccionado[j].substring(5, 7));
-
-            console.log(formData);
             await http.post({ url: BASE_URL_BOLETO, body: formData });
 
         }
