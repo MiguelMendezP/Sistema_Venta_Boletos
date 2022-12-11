@@ -17,6 +17,7 @@ import administradorRouter from "./routes/administrador.router";
 import salidaRouter from "./routes/salidas.route";
 import pasajeroRouter from "./routes/pasajero.router";
 import boletoRouter from "./routes/boleto.router";
+import reporteRouter from "./routes/reporte.router";
 
 // Initializations
 
@@ -45,5 +46,6 @@ app.use("/admin/terminal",terminaloRouter);
 app.use("/admin/usuario",usuarioRouter)
 app.use("/admin/administrador",administradorRouter)
 app.use("/admin/salida",salidaRouter);
+app.use("/admin/reporte",reporteRouter)
 
 export default app;

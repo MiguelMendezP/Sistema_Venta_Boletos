@@ -27,9 +27,13 @@ class LoginController {
                 
                 if (contrasenia == contraseniaUsuario) {
                     const user = usuarioResponse.toJSON();
+                    
                     delete user.contrasenia;
                     req.session.user = user;
+                    
                     return res.redirect("/busqueda");
+                }else{
+                    window.alert("La contraseña esta mal");
                 }
             }else if (administradorResponse !== null) {
                 const contraseniaAdministrador = administradorResponse.getDataValue("contrasenia");
@@ -39,6 +43,8 @@ class LoginController {
                     delete admin.contrasenia;
                     req.session.user = admin;
                     return res.redirect("/admin");
+                }else{
+                    window.alert("La contraseña esta mal");
                 }
             }
         } catch (error) {
@@ -53,7 +59,6 @@ class LoginController {
     }
     //Registrarse 
     public registrarse(req: Request, res: Response) {
-        console.log(req.body);
         res.send("Recivido")
     }
 }

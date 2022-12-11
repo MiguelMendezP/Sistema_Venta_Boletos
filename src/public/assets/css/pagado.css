@@ -1,0 +1,37 @@
+.e1 {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    background: #f3f3f3;
+    border-radius: 7px;
+      box-shadow: 0 5px 10px -5px rgb(0 0 0 / 30%);
+    width: 400px;
+    height: 500px;
+    margin: 100px auto;
+  } 
+  
+  .e1 h1{
+    padding-top: 30px;
+  }
+  
+  .e1 img{
+    padding: 20px;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .e1 span{
+    font-size: 12px;
+  }
+  
+  .e1 button{
+    margin-top: 30px;
+    width: 240px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #1346fe;
+    border-color: #1346fe;
+    color: white;
+    
+  }
+  

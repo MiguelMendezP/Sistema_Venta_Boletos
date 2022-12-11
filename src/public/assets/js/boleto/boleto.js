@@ -25,7 +25,7 @@ const boleto = (() => {
                     if (responseBoleto[i].idSalida == responseSalida[j].idSalida) {
                         var terminalO = responseSalida[j].terminal_salida;
                         var terminalD = responseSalida[j].terminal_destino;
-                        var fecha = responseSalida[j].fecha +" a las "+responseSalida[j].hora;
+                        var fecha = responseSalida[j].fecha + " a las " + responseSalida[j].hora;
                         var precio = responseSalida[j].precio;
 
                         crearRecuadro(i, terminalO, terminalD, pasajero, fecha, precio);
@@ -36,7 +36,43 @@ const boleto = (() => {
                 j = 0;
             }
         }
+
     }
+
+
+    document.addEventListener("click", (event) => {
+        const clickedElement = event.target;
+        if (clickedElement.matches('.btn')) {
+            id = (clickedElement.id).substring(5, clickedElement.id.length);
+            var $element = document.getElementById("c1--" + id);
+            html2pdf()
+                .set({
+                    margin: 1,
+                    filename: 'boleto.pdf',
+                    image: {
+                        type: 'jpeg',
+                        quality: 0.98
+                    },
+                    html2canvas: {
+                        scale: 3, // A mayor escala, mejores gráficos, pero más peso
+                        letterRendering: true,
+                    },
+                    jsPDF: {
+                        unit: "in",
+                        format: "a3",
+                        orientation: 'portrait' // landscape o portrait
+                    }
+                })
+                .from($element)
+                .save()
+                .catch(err => console.log(err));
+
+
+
+
+
+        }
+    });
 
     function crearElemento(tipoElem, id, clase, donde, text) {
         const $donde = document.getElementById(donde);
@@ -66,6 +102,7 @@ const boleto = (() => {
         crearElemento("button", "btn--" + id, "btn", "c3--" + id, "Descargar Boleto");
         crearElemento("p", null, null, "form", null);
     }
+
 
 
     const _initElements = () => {

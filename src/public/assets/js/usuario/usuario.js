@@ -34,20 +34,17 @@ const usuario = (() => {
     for (const key in item) {
       const value = item[key];
       const $td = document.createElement("td");
-      if (key !== "url_imagen") {
-        $td.innerText = value;
-      } else {
-        const $img = document.createElement("img");
-        $img.setAttribute("src", `/api/v1/file?filePath=${value}`);
-        $img.classList.add("img-icon");
-        $td.appendChild($img);
-      }
+      $td.innerText = value;
 
       $row.appendChild($td);
 
     }
-    $row.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
-    $row.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
+    const $td = document.createElement("td");
+    const $td2 = document.createElement("td");
+    $td.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
+    $td2.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
+    $row.appendChild($td);
+    $row.appendChild($td2);
     return $row;
   };
 

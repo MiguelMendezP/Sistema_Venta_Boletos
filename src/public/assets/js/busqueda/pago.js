@@ -19,15 +19,18 @@ const pago = (() => {
         const responseUsuario = await http.get(BASE_URL_USUARIO);
         let mapUsuarioCorreos = responseUsuario.map((responseUsuario) => responseUsuario.correo);
         let posidUsuario = mapUsuarioCorreos.indexOf($correoUsuario.innerHTML.trim());
+        let idUsuario = responseUsuario[posidUsuario].idUsuario;
+        
 
-        crearPasajeros(responseUsuario[posidUsuario].idUsuario);
+        crearPasajeros(idUsuario);
         for (let j = 0; j < iconValor.innerHTML; j++) {
             var formData = new FormData();
-            formData.append("idUsuario", responseUsuario[posidUsuario].idUsuario);
+            formData.append("idUsuario", idUsuario);
             formData.append("idSalida", viajes.dameIdSalida());
             formData.append("noAsiento", arrayAsientosSeleccionado[j].substring(5, 7));
             await http.post({ url: BASE_URL_BOLETO, body: formData });
-
+            pago.setVisible(false);
+            pagado.setVisible(true);
         }
     }
 

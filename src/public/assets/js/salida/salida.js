@@ -35,10 +35,14 @@ const salida = (() => {
       const $td = document.createElement("td");
       $td.innerText = value;
       $row.appendChild($td);
-
     }
-    $row.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
-    $row.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
+    const $td = document.createElement("td");
+    const $td2 = document.createElement("td");
+    $td.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
+    $td2.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
+    $row.appendChild($td);
+    $row.appendChild($td2);
+
     return $row;
   };
 
@@ -46,6 +50,7 @@ const salida = (() => {
     const $btn = document.createElement("button");
     $btn.innerText = labelBtn;
     $btn.className += "waves-effect waves-light btn red";
+    $btn.clas += "waves-effect waves-light btn red";
     $btn.setAttribute("item-id", itemId);
     $btn.addEventListener("click", _actionFuntion);
     return $btn;

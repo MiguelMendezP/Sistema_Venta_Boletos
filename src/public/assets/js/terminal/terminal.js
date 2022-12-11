@@ -39,9 +39,12 @@ const terminal = (() => {
       $row.appendChild($td);
 
     }
-    console.log(item[itemId]);
-    $row.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
-    $row.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
+    const $td = document.createElement("td");
+    const $td2 = document.createElement("td");
+    $td.appendChild(_createBtnAction(item[itemId], "Editar", _actionButtonEditar));
+    $td2.appendChild(_createBtnAction(item[itemId], "Eliminar", _actionButtonEliminar));
+    $row.appendChild($td);
+    $row.appendChild($td2);
     return $row;
   };
 
