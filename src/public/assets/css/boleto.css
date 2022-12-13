@@ -8,18 +8,36 @@ h2 {
     left: 100px;
 }
 
+.divFlex {
+    display: flex;
+}
+
+.numBol {
+    font-size: 100px;
+    position: absolute;
+    left: 80%;
+    top: 15%;
+}
+.numBolText {
+    font-size: 25px;
+    position: absolute;
+    left: 82%;
+    top: 30%;
+}
+
 
 .c1 {
     position: relative;
     top: 20px;
     left: 100px;
+    width: 900px;
 }
 
 .c2 {
     border-radius: 10px;
     box-shadow: 0 0 10px -4px rgb(0 0 0 / 30%);
     width: 900px;
-    height: 280px;
+    height: 300px;
     background: #fefeff;
 }
 
@@ -35,10 +53,11 @@ h2 {
     padding-left: 100px;
     width: 350px;
 }
+
 .c21 p {
     font-size: 20px;
     color: #424242;
-    padding:  0 0 0 100px;
+    padding: 0 0 0 100px;
     width: 350px;
 }
 
@@ -47,9 +66,12 @@ h2 {
     padding-top: 40px;
 }
 
-.c22 p{
+.c22 p {
     font-size: 20px;
+    padding-right: 7px;
+    margin-bottom: -10px;
 }
+
 .c3 {
     border-radius: 10px;
     box-shadow: 0 0 10px -4px rgb(0 0 0 / 30%);
@@ -59,6 +81,7 @@ h2 {
     text-align: center;
     padding-top: 15px;
 }
+
 .c3 .btn {
     height: 50px;
     font-size: 18px;
