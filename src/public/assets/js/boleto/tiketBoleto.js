@@ -1,4 +1,3 @@
-
 const tiketBoleto = (() => {
     const $formTiket = document.getElementById("formTiket");
  

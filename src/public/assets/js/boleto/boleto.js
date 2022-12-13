@@ -58,6 +58,8 @@ const boleto = (() => {
         }
     }
 
+
+
     document.addEventListener("click", (event) => {
         const clickedElement = event.target;
         if (clickedElement.matches('.btn')) {
@@ -75,6 +77,7 @@ const boleto = (() => {
             tiketBoleto.setVisible(true);
         }
     });
+
 
     function crearElemento(tipoElem, id, clase, donde, text) {
         const $donde = document.getElementById(donde);
